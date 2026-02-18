@@ -16,15 +16,15 @@ export default function ProgressBar({ completedChannels, totalChannels, totalCon
       <div className="flex items-center justify-between mb-3">
         <div className="flex gap-6 text-sm">
           <div>
-            <span className="text-slate-500">已尝试渠道</span>
+            <span className="text-slate-500">Channels Tried</span>
             <span className="ml-2 font-semibold text-blue-700">{completedChannels}/{totalChannels}</span>
           </div>
           <div>
-            <span className="text-slate-500">已联系人数</span>
+            <span className="text-slate-500">Contacts</span>
             <span className="ml-2 font-semibold text-blue-700">{totalContacts}</span>
           </div>
           <div>
-            <span className="text-slate-500">回复率</span>
+            <span className="text-slate-500">Reply Rate</span>
             <span className="ml-2 font-semibold text-blue-700">{replyRate}%</span>
           </div>
         </div>

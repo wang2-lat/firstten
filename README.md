@@ -1,43 +1,92 @@
-# FirstTen - 找到你的前10个付费客户
+# FirstTen
 
-帮助技术创始人系统性地找到前10个付费客户的 AI 工具。
+**Find your first 10 paying customers — systematically.**
 
-## 快速开始
+FirstTen is an AI-powered tool that helps technical founders go from "I built something" to "people are paying for it." Answer 5 questions about your product, and get a personalized customer acquisition playbook with actionable channels, outreach templates, and progress tracking.
 
-**前置要求：** Node.js 18+
+![Next.js](https://img.shields.io/badge/Next.js-16-black) ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue) ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8) ![License](https://img.shields.io/badge/License-MIT-green)
+
+## Features
+
+- **5-Question Form** — Describe your product, and AI generates a full go-to-market strategy
+- **Customer Profile** — AI-generated target customer persona with pain points, behaviors, and where to find them
+- **10 Channel Recommendations** — Each with step-by-step actions, difficulty rating, message templates, and success stories
+- **Progress Tracking** — Mark channels as done, log contacts & replies, track your reply rate
+- **20 Outreach Templates** — Cold email, LinkedIn DM, Reddit/community, Twitter/X — one-click copy with variable substitution
+- **100% Local Storage** — All your data stays in your browser. Nothing is uploaded to any server.
+
+## Quick Start
+
+**Prerequisites:** Node.js 18+
 
 ```bash
-# 1. 解压后进入目录
+# Clone
+git clone https://github.com/wang2-lat/firstten.git
 cd firstten
 
-# 2. 安装依赖
+# Install
 npm install
 
-# 3. 配置 API Key
+# Configure
 cp .env.example .env.local
-# 编辑 .env.local，填入你的 OpenAI API Key
+# Edit .env.local — add your OpenAI API key
 
-# 4. 启动
+# Run
 npm run dev
 ```
 
-打开浏览器访问 http://localhost:3000
+Open http://localhost:3000
 
-## 功能
+## Configuration
 
-- **5问表单** — 输入产品信息，AI 自动生成获客策略
-- **客户画像** — AI 分析目标客户特征、痛点、出没场所
-- **10个渠道推荐** — 每个渠道含行动步骤、话术模板、成功案例
-- **进度追踪** — 标记完成、记录联系/回复人数、计算回复率
-- **20个话术模板** — 冷邮件、LinkedIn、Reddit、Twitter 分类模板，一键复制
+Copy `.env.example` to `.env.local` and fill in your values:
 
-## 隐私说明
+```env
+OPENAI_API_KEY=sk-your-api-key-here
+OPENAI_BASE_URL=https://api.openai.com/v1    # or your custom endpoint
+```
 
-- 所有用户数据（进度、结果）仅存储在浏览器 localStorage，不上传服务器
-- 表单内容仅用于调用 AI 生成策略，不会被存储或用于其他用途
-- API Key 仅存在于你本地的 `.env.local` 文件中
-- 项目设置了安全响应头（CSP、X-Frame-Options 等）
+## Tech Stack
 
-## 技术栈
+| Layer | Tech |
+|-------|------|
+| Framework | Next.js 16 (App Router) |
+| Language | TypeScript 5 |
+| Styling | Tailwind CSS 4 |
+| AI | OpenAI API (gpt-4o-mini) |
+| Storage | Browser localStorage |
 
-Next.js 16 + TypeScript + Tailwind CSS + OpenAI API
+## Project Structure
+
+```
+firstten/
+├── app/
+│   ├── page.tsx                 # Home — 5-question form
+│   ├── results/page.tsx         # Results — profile + channels
+│   ├── channel/[id]/page.tsx    # Channel detail + templates
+│   ├── templates/page.tsx       # Template library (20 templates)
+│   └── api/generate/route.ts   # AI generation endpoint
+├── components/                  # Reusable UI components
+├── lib/                         # OpenAI client, storage, template data
+└── types/                       # TypeScript type definitions
+```
+
+## Privacy & Security
+
+- **Local-first**: All user data (progress, results) is stored in browser localStorage — never uploaded
+- **No tracking**: Zero analytics, zero cookies, zero third-party scripts
+- **Secure headers**: CSP, X-Frame-Options, X-Content-Type-Options, Referrer-Policy
+- **Input sanitization**: All API inputs are length-limited and sanitized
+- **No logging of user data**: Server logs only error types, never user content
+
+## Customization
+
+Want a customized version for your specific use case? **DM me on GitHub** — happy to help!
+
+## License
+
+MIT
+
+---
+
+Built with AI. Ship faster. Get customers.

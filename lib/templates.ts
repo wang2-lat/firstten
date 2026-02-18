@@ -1,266 +1,266 @@
 import { Template } from '@/types';
 
 export const templates: Template[] = [
-  // ===== 冷邮件 (5个) =====
+  // ===== Cold Email (5) =====
   {
     id: 'cold-email-1',
-    title: '直接价值主张',
+    title: 'Direct Value Proposition',
     category: 'cold-email',
-    content: `Hi {姓名},
+    content: `Hi {name},
 
-I noticed {观察到的痛点}. We built {产品名} to solve exactly this — {一句话价值}.
+I noticed {observed pain point}. We built {product name} to solve exactly this — {one-line value}.
 
-Would you be open to a 15-min call this week? I'd love to show you how {具体效果}.
+Would you be open to a 15-min call this week? I'd love to show you how {specific outcome}.
 
 Best,
-{你的名字}`,
-    variables: ['姓名', '观察到的痛点', '产品名', '一句话价值', '具体效果', '你的名字'],
+{your name}`,
+    variables: ['name', 'observed pain point', 'product name', 'one-line value', 'specific outcome', 'your name'],
   },
   {
     id: 'cold-email-2',
-    title: '案例驱动',
+    title: 'Case Study Driven',
     category: 'cold-email',
-    content: `Hi {姓名},
+    content: `Hi {name},
 
-I helped {类似公司} {具体成果} using {产品名}.
+I helped {similar company} {specific result} using {product name}.
 
-I think we could do the same for {对方公司}. Here's how:
-- {好处1}
-- {好处2}
-- {好处3}
+I think we could do the same for {their company}. Here's how:
+- {benefit 1}
+- {benefit 2}
+- {benefit 3}
 
 Can I share a quick demo? Takes 10 minutes.
 
-{你的名字}`,
-    variables: ['姓名', '类似公司', '具体成果', '产品名', '对方公司', '好处1', '好处2', '好处3', '你的名字'],
+{your name}`,
+    variables: ['name', 'similar company', 'specific result', 'product name', 'their company', 'benefit 1', 'benefit 2', 'benefit 3', 'your name'],
   },
   {
     id: 'cold-email-3',
-    title: '问题引导',
+    title: 'Question-Led',
     category: 'cold-email',
-    content: `Hi {姓名},
+    content: `Hi {name},
 
-Quick question — are you currently struggling with {用户痛点}?
+Quick question — are you currently struggling with {user pain point}?
 
-If so, {产品名} might be worth a look. We help {目标用户} {核心价值}, and it takes less than {时间} to set up.
+If so, {product name} might be worth a look. We help {target user} {core value}, and it takes less than {time} to set up.
 
 Happy to give you a free trial if you're interested.
 
-{你的名字}`,
-    variables: ['姓名', '用户痛点', '产品名', '目标用户', '核心价值', '时间', '你的名字'],
+{your name}`,
+    variables: ['name', 'user pain point', 'product name', 'target user', 'core value', 'time', 'your name'],
   },
   {
     id: 'cold-email-4',
-    title: '免费价值先行',
+    title: 'Free Value First',
     category: 'cold-email',
-    content: `Hi {姓名},
+    content: `Hi {name},
 
-I put together a quick {免费资源类型} on {相关话题} — thought it might be useful for {对方公司}.
+I put together a quick {free resource type} on {related topic} — thought it might be useful for {their company}.
 
-{资源链接}
+{resource link}
 
-BTW, we also built {产品名} that helps {核心价值}. Would love your feedback if you have 5 minutes.
+BTW, we also built {product name} that helps {core value}. Would love your feedback if you have 5 minutes.
 
-{你的名字}`,
-    variables: ['姓名', '免费资源类型', '相关话题', '对方公司', '资源链接', '产品名', '核心价值', '你的名字'],
+{your name}`,
+    variables: ['name', 'free resource type', 'related topic', 'their company', 'resource link', 'product name', 'core value', 'your name'],
   },
   {
     id: 'cold-email-5',
-    title: '创始人对创始人',
+    title: 'Founder to Founder',
     category: 'cold-email',
-    content: `Hi {姓名},
+    content: `Hi {name},
 
-Fellow founder here 👋 I'm building {产品名} — {一句话描述}.
+Fellow founder here. I'm building {product name} — {one-line description}.
 
-I noticed your team at {对方公司} might benefit from this because {原因}.
+I noticed your team at {their company} might benefit from this because {reason}.
 
 I'm offering our first 10 customers lifetime pricing. Would you be interested in being one of them?
 
-{你的名字}
-Founder, {产品名}`,
-    variables: ['姓名', '产品名', '一句话描述', '对方公司', '原因', '你的名字'],
+{your name}
+Founder, {product name}`,
+    variables: ['name', 'product name', 'one-line description', 'their company', 'reason', 'your name'],
   },
 
-  // ===== LinkedIn私信 (5个) =====
+  // ===== LinkedIn DM (5) =====
   {
     id: 'linkedin-1',
-    title: '连接请求+价值',
+    title: 'Connection Request + Value',
     category: 'linkedin',
-    content: `Hi {姓名}, I see you're working on {他们的领域} at {公司}. I'm building {产品名} to help with {痛点} — would love to connect and share ideas!`,
-    variables: ['姓名', '他们的领域', '公司', '产品名', '痛点'],
+    content: `Hi {name}, I see you're working on {their field} at {company}. I'm building {product name} to help with {pain point} — would love to connect and share ideas!`,
+    variables: ['name', 'their field', 'company', 'product name', 'pain point'],
   },
   {
     id: 'linkedin-2',
-    title: '赞美+提问',
+    title: 'Compliment + Question',
     category: 'linkedin',
-    content: `Hi {姓名}, loved your recent post about {话题}! Quick question — how does your team currently handle {痛点}? We built something that might help.`,
-    variables: ['姓名', '话题', '痛点'],
+    content: `Hi {name}, loved your recent post about {topic}! Quick question — how does your team currently handle {pain point}? We built something that might help.`,
+    variables: ['name', 'topic', 'pain point'],
   },
   {
     id: 'linkedin-3',
-    title: '共同背景',
+    title: 'Shared Background',
     category: 'linkedin',
-    content: `Hi {姓名}, noticed we're both in {共同领域/群组}. I'm working on {产品名} — helps {目标用户} {核心价值}. Would love to get your perspective as someone in the space!`,
-    variables: ['姓名', '共同领域/群组', '产品名', '目标用户', '核心价值'],
+    content: `Hi {name}, noticed we're both in {shared field/group}. I'm working on {product name} — helps {target user} {core value}. Would love to get your perspective as someone in the space!`,
+    variables: ['name', 'shared field/group', 'product name', 'target user', 'core value'],
   },
   {
     id: 'linkedin-4',
-    title: '内容互动跟进',
+    title: 'Content Engagement Follow-up',
     category: 'linkedin',
-    content: `Hi {姓名}, I commented on your post about {话题} earlier — great insights! I'm actually building a tool that addresses {相关痛点}. Would you be open to a quick chat? I'd value your input.`,
-    variables: ['姓名', '话题', '相关痛点'],
+    content: `Hi {name}, I commented on your post about {topic} earlier — great insights! I'm actually building a tool that addresses {related pain point}. Would you be open to a quick chat? I'd value your input.`,
+    variables: ['name', 'topic', 'related pain point'],
   },
   {
     id: 'linkedin-5',
-    title: '直接演示邀请',
+    title: 'Direct Demo Invite',
     category: 'linkedin',
-    content: `Hi {姓名}, I built {产品名} specifically for {目标用户} like you. It {核心价值} in just {时间/步骤}. Want me to send you a 2-min demo video? No strings attached.`,
-    variables: ['姓名', '产品名', '目标用户', '核心价值', '时间/步骤'],
+    content: `Hi {name}, I built {product name} specifically for {target user} like you. It {core value} in just {time/steps}. Want me to send you a 2-min demo video? No strings attached.`,
+    variables: ['name', 'product name', 'target user', 'core value', 'time/steps'],
   },
 
-  // ===== Reddit/社区 (5个) =====
+  // ===== Reddit/Community (5) =====
   {
     id: 'reddit-1',
-    title: '分享经验+提及工具',
+    title: 'Share Experience + Mention Tool',
     category: 'reddit',
-    content: `I've been dealing with {痛点} for a while too. What worked for me:
+    content: `I've been dealing with {pain point} for a while too. What worked for me:
 
-1. {建议1}
-2. {建议2}
-3. {建议3}
+1. {tip 1}
+2. {tip 2}
+3. {tip 3}
 
-I also recently started using {产品名} which helped with {具体效果}. Happy to share more details if anyone's interested.`,
-    variables: ['痛点', '建议1', '建议2', '建议3', '产品名', '具体效果'],
+I also recently started using {product name} which helped with {specific outcome}. Happy to share more details if anyone's interested.`,
+    variables: ['pain point', 'tip 1', 'tip 2', 'tip 3', 'product name', 'specific outcome'],
   },
   {
     id: 'reddit-2',
-    title: '征求反馈帖',
+    title: 'Feedback Request Post',
     category: 'reddit',
-    content: `Hey r/{subreddit}, I'm building {产品名} — {一句话描述}.
+    content: `Hey r/{subreddit}, I'm building {product name} — {one-line description}.
 
-The problem I'm solving: {痛点描述}
+The problem I'm solving: {pain point description}
 
 Current features:
-- {功能1}
-- {功能2}
-- {功能3}
+- {feature 1}
+- {feature 2}
+- {feature 3}
 
 Would love honest feedback. What would make this useful for you?`,
-    variables: ['subreddit', '产品名', '一句话描述', '痛点描述', '功能1', '功能2', '功能3'],
+    variables: ['subreddit', 'product name', 'one-line description', 'pain point description', 'feature 1', 'feature 2', 'feature 3'],
   },
   {
     id: 'reddit-3',
-    title: '回答问题+软推荐',
+    title: 'Answer Question + Soft Plug',
     category: 'reddit',
     content: `Great question! Here's what I'd recommend:
 
-{详细回答}
+{detailed answer}
 
-If you want to automate this, {产品名} does exactly that. Full disclosure — I'm the founder, but genuinely think it could help here.`,
-    variables: ['详细回答', '产品名'],
+If you want to automate this, {product name} does exactly that. Full disclosure — I'm the founder, but genuinely think it could help here.`,
+    variables: ['detailed answer', 'product name'],
   },
   {
     id: 'reddit-4',
-    title: '分享成果/数据',
+    title: 'Share Results/Data',
     category: 'reddit',
-    content: `Sharing my results after {时间段} of {相关活动}:
+    content: `Sharing my results after {time period} of {related activity}:
 
-Before: {之前的状态}
-After: {之后的状态}
+Before: {before state}
+After: {after state}
 
 Key things that helped:
-1. {方法1}
-2. {方法2}
-3. Using {产品名} for {具体用途}
+1. {method 1}
+2. {method 2}
+3. Using {product name} for {specific use}
 
 AMA if you want more details!`,
-    variables: ['时间段', '相关活动', '之前的状态', '之后的状态', '方法1', '方法2', '产品名', '具体用途'],
+    variables: ['time period', 'related activity', 'before state', 'after state', 'method 1', 'method 2', 'product name', 'specific use'],
   },
   {
     id: 'reddit-5',
-    title: '社区投票/验证',
+    title: 'Community Poll/Validation',
     category: 'reddit',
-    content: `Quick poll for {目标用户}:
+    content: `Quick poll for {target user}:
 
-How do you currently handle {痛点}?
+How do you currently handle {pain point}?
 
 A) Manual process
-B) Use {竞品类型}
+B) Use {competitor type}
 C) Built internal tool
-D) Just ignore it 😅
+D) Just ignore it
 
 I'm exploring building a solution for this. Your input would really help shape what I build!`,
-    variables: ['目标用户', '痛点', '竞品类型'],
+    variables: ['target user', 'pain point', 'competitor type'],
   },
 
-  // ===== Twitter/X (5个) =====
+  // ===== Twitter/X (5) =====
   {
     id: 'twitter-1',
-    title: '产品发布推文',
+    title: 'Product Launch Tweet',
     category: 'twitter',
-    content: `I just shipped {产品名} 🚀
+    content: `I just shipped {product name}
 
-It helps {目标用户} {核心价值}.
+It helps {target user} {core value}.
 
-The problem: {痛点}
-The solution: {一句话方案}
+The problem: {pain point}
+The solution: {one-line solution}
 
-Try it free → {链接}
+Try it free -> {link}
 
-RT appreciated 🙏`,
-    variables: ['产品名', '目标用户', '核心价值', '痛点', '一句话方案', '链接'],
+RT appreciated`,
+    variables: ['product name', 'target user', 'core value', 'pain point', 'one-line solution', 'link'],
   },
   {
     id: 'twitter-2',
-    title: '构建公开日志',
+    title: 'Build in Public Log',
     category: 'twitter',
-    content: `Day {天数} of building {产品名}:
+    content: `Day {day number} of building {product name}:
 
-Today I {今日成果}.
+Today I {today's achievement}.
 
-Learning: {经验教训}
+Learning: {lesson learned}
 
-Next up: {下一步计划}
+Next up: {next step}
 
-{相关标签}`,
-    variables: ['天数', '产品名', '今日成果', '经验教训', '下一步计划', '相关标签'],
+{relevant hashtags}`,
+    variables: ['day number', 'product name', 'today\'s achievement', 'lesson learned', 'next step', 'relevant hashtags'],
   },
   {
     id: 'twitter-3',
-    title: '痛点共鸣推文',
+    title: 'Pain Point Resonance Tweet',
     category: 'twitter',
-    content: `{目标用户} spend {时间/金钱} on {痛点活动} every {频率}.
+    content: `{target user} spend {time/money} on {pain point activity} every {frequency}.
 
-What if you could {理想效果} instead?
+What if you could {ideal outcome} instead?
 
-That's exactly what {产品名} does.
+That's exactly what {product name} does.
 
-{链接}`,
-    variables: ['目标用户', '时间/金钱', '痛点活动', '频率', '理想效果', '产品名', '链接'],
+{link}`,
+    variables: ['target user', 'time/money', 'pain point activity', 'frequency', 'ideal outcome', 'product name', 'link'],
   },
   {
     id: 'twitter-4',
-    title: '回复互动',
+    title: 'Reply Engagement',
     category: 'twitter',
-    content: `This is such a great point! We actually built {产品名} to solve exactly this. {补充价值/见解}. Would love to hear your thoughts!`,
-    variables: ['产品名', '补充价值/见解'],
+    content: `This is such a great point! We actually built {product name} to solve exactly this. {additional value/insight}. Would love to hear your thoughts!`,
+    variables: ['product name', 'additional value/insight'],
   },
   {
     id: 'twitter-5',
-    title: 'DM跟进模板',
+    title: 'DM Follow-up Template',
     category: 'twitter',
-    content: `Hey {姓名}! Saw your tweet about {话题} — totally relate.
+    content: `Hey {name}! Saw your tweet about {topic} — totally relate.
 
-I'm building {产品名} to help with this. Early users are getting {具体效果}.
+I'm building {product name} to help with this. Early users are getting {specific outcome}.
 
 Would you be up for trying it? Happy to give you free access + priority support.`,
-    variables: ['姓名', '话题', '产品名', '具体效果'],
+    variables: ['name', 'topic', 'product name', 'specific outcome'],
   },
 ];
 
 export const categoryLabels: Record<string, string> = {
-  'cold-email': '冷邮件',
-  'linkedin': 'LinkedIn 私信',
-  'reddit': 'Reddit/社区',
+  'cold-email': 'Cold Email',
+  'linkedin': 'LinkedIn DM',
+  'reddit': 'Reddit/Community',
   'twitter': 'Twitter/X',
 };

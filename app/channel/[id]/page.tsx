@@ -72,7 +72,7 @@ export default function ChannelDetailPage() {
   if (!isLoaded) {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="text-slate-400 text-sm">加载中...</div>
+        <div className="text-slate-400 text-sm">Loading...</div>
       </div>
     );
   }
@@ -81,13 +81,13 @@ export default function ChannelDetailPage() {
     return (
       <div className="flex items-center justify-center py-20">
         <div className="text-center max-w-md mx-auto px-6">
-          <h2 className="text-xl font-semibold text-slate-800 mb-3">未找到渠道</h2>
-          <p className="text-slate-500 mb-6">该渠道不存在，或尚未生成数据</p>
+          <h2 className="text-xl font-semibold text-slate-800 mb-3">Channel Not Found</h2>
+          <p className="text-slate-500 mb-6">This channel doesn&apos;t exist or no data has been generated yet.</p>
           <Link
             href="/results"
             className="inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
           >
-            返回结果页
+            Back to Results
           </Link>
         </div>
       </div>
@@ -103,14 +103,14 @@ export default function ChannelDetailPage() {
         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
         </svg>
-        返回结果
+        Back to Results
       </Link>
 
       <section>
         <h1 className="text-3xl font-bold text-slate-900 mb-4">{channel.name}</h1>
         <div className="flex flex-wrap items-center gap-4">
           <div className="flex items-center gap-1.5">
-            <span className="text-sm text-slate-500">难度</span>
+            <span className="text-sm text-slate-500">Difficulty</span>
             <div className="flex">
               {[1, 2, 3, 4, 5].map((star) => (
                 <span key={star} className={`text-base ${star <= channel.difficulty ? 'text-amber-400' : 'text-slate-200'}`}>
@@ -126,12 +126,12 @@ export default function ChannelDetailPage() {
       </section>
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
-        <h2 className="text-lg font-semibold text-slate-800 mb-3">推荐理由</h2>
+        <h2 className="text-lg font-semibold text-slate-800 mb-3">Why This Channel</h2>
         <p className="text-slate-600 leading-relaxed">{channel.reason}</p>
       </section>
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
-        <h2 className="text-lg font-semibold text-slate-800 mb-4">行动步骤</h2>
+        <h2 className="text-lg font-semibold text-slate-800 mb-4">Action Steps</h2>
         <ol className="space-y-3">
           {channel.steps.map((step, idx) => (
             <li key={idx} className="flex gap-3">
@@ -145,7 +145,7 @@ export default function ChannelDetailPage() {
       </section>
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
-        <h2 className="text-lg font-semibold text-slate-800 mb-4">话术模板</h2>
+        <h2 className="text-lg font-semibold text-slate-800 mb-4">Message Templates</h2>
         <div className="space-y-4">
           {channel.templates.map((template, idx) => (
             <div key={idx} className="rounded-lg border border-slate-100 bg-slate-50 p-4">
@@ -161,16 +161,16 @@ export default function ChannelDetailPage() {
       </section>
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
-        <h2 className="text-lg font-semibold text-slate-800 mb-3">成功案例</h2>
+        <h2 className="text-lg font-semibold text-slate-800 mb-3">Success Story</h2>
         <p className="text-slate-600 leading-relaxed">{channel.successCase}</p>
       </section>
 
       <section className="rounded-xl border border-slate-200 bg-white p-6">
-        <h2 className="text-lg font-semibold text-slate-800 mb-4">进度追踪</h2>
+        <h2 className="text-lg font-semibold text-slate-800 mb-4">Progress Tracking</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <div>
             <label htmlFor="contactCount" className="block text-sm font-medium text-slate-700 mb-1.5">
-              已联系人数
+              Contacts Made
             </label>
             <input
               id="contactCount"
@@ -183,7 +183,7 @@ export default function ChannelDetailPage() {
           </div>
           <div>
             <label htmlFor="replyCount" className="block text-sm font-medium text-slate-700 mb-1.5">
-              已回复人数
+              Replies Received
             </label>
             <input
               id="replyCount"
@@ -197,7 +197,7 @@ export default function ChannelDetailPage() {
         </div>
         {contactCount > 0 && (
           <p className="mt-4 text-sm text-slate-500">
-            回复率：
+            Reply rate:{' '}
             <span className="font-semibold text-slate-700">
               {((replyCount / contactCount) * 100).toFixed(1)}%
             </span>
@@ -211,14 +211,14 @@ export default function ChannelDetailPage() {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
             </svg>
-            已完成
+            Completed
           </span>
         ) : (
           <button
             onClick={handleMarkCompleted}
             className="rounded-lg bg-blue-600 px-8 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700 active:bg-blue-800"
           >
-            标记为已完成
+            Mark as Completed
           </button>
         )}
       </div>

@@ -18,7 +18,7 @@ export async function POST(request: NextRequest) {
 
     if (!product || !problem || !targetUser || !budget || !timePerDay) {
       return NextResponse.json(
-        { error: '请填写所有必填项' },
+        { error: 'Please fill in all required fields' },
         { status: 400 }
       );
     }
@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
 5. successCase 要具体且有参考价值
 6. 所有 completed 字段设为 false，contactCount 和 replyCount 设为 0
 7. 渠道推荐要结合用户的预算和每日可用时间，优先推荐性价比高的渠道
-8. 所有内容使用中文输出`,
+8. 请用英文输出所有内容`,
             },
             {
               role: 'user',
@@ -97,7 +97,7 @@ export async function POST(request: NextRequest) {
       const content = completion.choices[0]?.message?.content;
       if (!content) {
         return NextResponse.json(
-          { error: 'AI 未返回有效内容，请重试' },
+          { error: 'AI did not return valid content, please retry' },
           { status: 500 }
         );
       }
@@ -110,14 +110,14 @@ export async function POST(request: NextRequest) {
   } catch (error: unknown) {
     if (error instanceof Error && error.name === 'AbortError') {
       return NextResponse.json(
-        { error: '请求超时，请稍后重试' },
+        { error: 'Request timed out, please retry' },
         { status: 504 }
       );
     }
 
     if (error instanceof SyntaxError) {
       return NextResponse.json(
-        { error: 'AI 返回格式异常，请重试' },
+        { error: 'AI response format error, please retry' },
         { status: 500 }
       );
     }
@@ -126,7 +126,7 @@ export async function POST(request: NextRequest) {
     console.error('[POST /api/generate] Error type:', error instanceof Error ? error.constructor.name : 'Unknown');
 
     return NextResponse.json(
-      { error: '服务器内部错误，请稍后重试' },
+      { error: 'Internal server error, please retry' },
       { status: 500 }
     );
   }

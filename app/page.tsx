@@ -41,19 +41,19 @@ export default function Home() {
     const newErrors: Partial<Record<keyof FormData, string>> = {};
 
     if (!formData.product.trim()) {
-      newErrors.product = '请输入你的产品描述';
+      newErrors.product = 'Please enter your product description';
     }
     if (!formData.problem.trim()) {
-      newErrors.problem = '请输入产品解决的问题';
+      newErrors.problem = 'Please enter the problem your product solves';
     }
     if (!formData.targetUser.trim()) {
-      newErrors.targetUser = '请输入目标用户';
+      newErrors.targetUser = 'Please enter your target user';
     }
     if (!formData.budget) {
-      newErrors.budget = '请选择预算范围';
+      newErrors.budget = 'Please select a budget range';
     }
     if (!formData.timePerDay) {
-      newErrors.timePerDay = '请选择每天投入时间';
+      newErrors.timePerDay = 'Please select daily time investment';
     }
 
     setErrors(newErrors);
@@ -80,14 +80,14 @@ export default function Home() {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => null);
-        throw new Error(errorData?.error || `请求失败 (${response.status})`);
+        throw new Error(errorData?.error || `Request failed (${response.status})`);
       }
 
       const result: GenerateResult = await response.json();
       saveFormAndResult(formData, result);
       router.push('/results');
     } catch (err) {
-      const message = err instanceof Error ? err.message : '未知错误，请稍后重试';
+      const message = err instanceof Error ? err.message : 'Unknown error, please try again later';
       setApiError(message);
     } finally {
       setIsLoading(false);
@@ -95,17 +95,17 @@ export default function Home() {
   }
 
   const budgetOptions = [
-    { value: '$0', label: '$0 (零成本)' },
+    { value: '$0', label: '$0 (Free)' },
     { value: '<$100', label: '< $100' },
     { value: '<$500', label: '< $500' },
     { value: '$500+', label: '$500+' },
   ];
 
   const timeOptions = [
-    { value: '30min', label: '30 分钟' },
-    { value: '1h', label: '1 小时' },
-    { value: '2h', label: '2 小时' },
-    { value: '4h+', label: '4 小时以上' },
+    { value: '30min', label: '30 min' },
+    { value: '1h', label: '1 hour' },
+    { value: '2h', label: '2 hours' },
+    { value: '4h+', label: '4+ hours' },
   ];
 
   return (
@@ -114,10 +114,10 @@ export default function Home() {
       <section className="pt-12 pb-10 text-center">
         <div className="mx-auto max-w-2xl px-6">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            找到你的前10个付费客户
+            Find Your First 10 Paying Customers
           </h1>
           <p className="mt-4 text-lg leading-8 text-gray-600">
-            回答5个简单问题，AI帮你制定获客策略
+            Answer 5 simple questions, let AI craft your customer acquisition strategy
           </p>
         </div>
       </section>
@@ -134,12 +134,12 @@ export default function Home() {
               htmlFor="product"
               className="block text-sm font-semibold text-gray-900"
             >
-              1. 你的产品是什么？（一句话描述）
+              1. What is your product? (one sentence)
             </label>
             <input
               id="product"
               type="text"
-              placeholder="例如：帮助独立开发者自动生成落地页的 SaaS 工具"
+              placeholder="e.g. A SaaS tool that auto-generates landing pages for indie developers"
               value={formData.product}
               onChange={(e) => handleChange('product', e.target.value)}
               className={`mt-2 block w-full rounded-lg border px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition focus:outline-none focus:ring-2 ${
@@ -159,12 +159,12 @@ export default function Home() {
               htmlFor="problem"
               className="block text-sm font-semibold text-gray-900"
             >
-              2. 解决什么问题？
+              2. What problem does it solve?
             </label>
             <input
               id="problem"
               type="text"
-              placeholder="例如：独立开发者不擅长设计，做落地页耗时耗力"
+              placeholder="e.g. Indie developers lack design skills and building landing pages is time-consuming"
               value={formData.problem}
               onChange={(e) => handleChange('problem', e.target.value)}
               className={`mt-2 block w-full rounded-lg border px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition focus:outline-none focus:ring-2 ${
@@ -184,12 +184,12 @@ export default function Home() {
               htmlFor="targetUser"
               className="block text-sm font-semibold text-gray-900"
             >
-              3. 目标用户是谁？
+              3. Who is your target user?
             </label>
             <input
               id="targetUser"
               type="text"
-              placeholder="例如：有产品但缺少营销能力的独立开发者"
+              placeholder="e.g. Indie developers who have a product but lack marketing skills"
               value={formData.targetUser}
               onChange={(e) => handleChange('targetUser', e.target.value)}
               className={`mt-2 block w-full rounded-lg border px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm transition focus:outline-none focus:ring-2 ${
@@ -209,7 +209,7 @@ export default function Home() {
               htmlFor="budget"
               className="block text-sm font-semibold text-gray-900"
             >
-              4. 预算范围？
+              4. Budget range?
             </label>
             <select
               id="budget"
@@ -238,7 +238,7 @@ export default function Home() {
               htmlFor="timePerDay"
               className="block text-sm font-semibold text-gray-900"
             >
-              5. 每天能投入多少时间？
+              5. How much time can you invest daily?
             </label>
             <select
               id="timePerDay"
@@ -296,17 +296,17 @@ export default function Home() {
                     d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
                   />
                 </svg>
-                AI 正在生成策略...
+                AI is generating your strategy...
               </>
             ) : (
-              '生成获客策略'
+              'Generate Strategy'
             )}
           </button>
 
           <p className="text-xs text-center text-gray-400 mt-4 leading-relaxed">
-            你的数据仅存储在浏览器本地 (localStorage)，不会上传到我们的服务器。
+            Your data is stored locally in your browser (localStorage) and never uploaded to our servers.
             <br />
-            表单内容会发送至 AI 服务生成策略，不会被存储或用于其他用途。
+            Form data is sent to AI service only for strategy generation and is not stored.
           </p>
         </form>
       </section>

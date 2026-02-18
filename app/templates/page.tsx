@@ -6,7 +6,7 @@ import TemplateCard from '@/components/TemplateCard';
 
 const categories = ['all', 'cold-email', 'linkedin', 'reddit', 'twitter'] as const;
 const categoryNames: Record<string, string> = {
-  all: '全部',
+  all: 'All',
   ...categoryLabels,
 };
 
@@ -26,8 +26,8 @@ export default function TemplatesPage() {
   return (
     <div>
       <div className="mb-8">
-        <h1 className="text-2xl font-bold text-slate-800">话术模板库</h1>
-        <p className="text-slate-500 mt-1">20个精选话术模板，一键复制，快速触达潜在客户</p>
+        <h1 className="text-2xl font-bold text-slate-800">Message Template Library</h1>
+        <p className="text-slate-500 mt-1">20 curated outreach templates. One-click copy, reach potential customers faster.</p>
       </div>
 
       <div className="flex flex-col sm:flex-row gap-4 mb-6">
@@ -48,7 +48,7 @@ export default function TemplatesPage() {
         </div>
         <input
           type="text"
-          placeholder="搜索模板..."
+          placeholder="Search templates..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="px-4 py-1.5 border border-slate-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent sm:ml-auto w-full sm:w-64"
@@ -57,7 +57,7 @@ export default function TemplatesPage() {
 
       {filtered.length === 0 ? (
         <div className="text-center py-12 text-slate-400">
-          没有找到匹配的模板
+          No matching templates found
         </div>
       ) : (
         <div className="grid gap-4 md:grid-cols-2">

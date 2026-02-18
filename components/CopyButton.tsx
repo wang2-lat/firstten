@@ -25,7 +25,7 @@ export default function CopyButton({ text, className = '' }: CopyButtonProps) {
           : 'bg-slate-100 text-slate-600 hover:bg-blue-100 hover:text-blue-700'
       } ${className}`}
     >
-      {copied ? '✓ 已复制' : '复制'}
+      {copied ? 'Copied' : 'Copy'}
     </button>
   );
 }

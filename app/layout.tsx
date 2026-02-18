@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "FirstTen - 找到你的前10个付费客户",
-  description: "帮助技术创始人系统性地找到前10个付费客户",
+  title: "FirstTen - Find Your First 10 Paying Customers",
+  description: "Help technical founders systematically find their first 10 paying customers",
 };
 
 export default function RootLayout({
@@ -24,7 +24,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh">
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
       >
@@ -35,13 +35,13 @@ export default function RootLayout({
             </Link>
             <div className="flex gap-6 text-sm">
               <Link href="/" className="text-slate-600 hover:text-blue-700 transition-colors">
-                首页
+                Home
               </Link>
               <Link href="/results" className="text-slate-600 hover:text-blue-700 transition-colors">
-                结果
+                Results
               </Link>
               <Link href="/templates" className="text-slate-600 hover:text-blue-700 transition-colors">
-                模板库
+                Templates
               </Link>
             </div>
           </div>

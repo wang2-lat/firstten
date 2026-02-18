@@ -28,7 +28,7 @@ export default function ResultsPage() {
   if (!isLoaded) {
     return (
       <div className="flex items-center justify-center py-20">
-        <div className="text-slate-400 text-sm">加载中...</div>
+        <div className="text-slate-400 text-sm">Loading...</div>
       </div>
     );
   }
@@ -38,16 +38,16 @@ export default function ResultsPage() {
       <div className="flex items-center justify-center py-20">
         <div className="text-center max-w-md mx-auto px-6">
           <h2 className="text-xl font-semibold text-slate-800 mb-3">
-            还没有数据
+            No Data Yet
           </h2>
           <p className="text-slate-500 mb-6">
-            请先填写表单，AI 会为你生成获客策略
+            Please fill out the form first to generate your customer acquisition strategy.
           </p>
           <Link
             href="/"
             className="inline-block rounded-lg bg-blue-600 px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
           >
-            去填写表单
+            Go to Form
           </Link>
         </div>
       </div>
@@ -68,12 +68,12 @@ export default function ResultsPage() {
   return (
     <div>
       <div className="flex items-center justify-between mb-6">
-        <h1 className="text-2xl font-bold text-slate-800">获客策略</h1>
+        <h1 className="text-2xl font-bold text-slate-800">Acquisition Strategy</h1>
         <button
           onClick={handleReset}
           className="rounded-lg border border-red-200 bg-white px-4 py-2 text-sm font-medium text-red-600 transition hover:bg-red-50 hover:border-red-300"
         >
-          重新开始
+          Start Over
         </button>
       </div>
 
@@ -91,7 +91,7 @@ export default function ResultsPage() {
 
         <div className="lg:col-span-2">
           <h2 className="text-lg font-bold text-slate-800 mb-4">
-            推荐渠道
+            Recommended Channels
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {channels.map((channel) => (

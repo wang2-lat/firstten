@@ -1,7 +1,10 @@
 {
   "name": "firstten",
-  "version": "0.1.0",
-  "private": true,
+  "version": "1.0.0",
+  "description": "AI-powered tool to help technical founders find their first 10 paying customers",
+  "author": "wang2-lat",
+  "license": "MIT",
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
