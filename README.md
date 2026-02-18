@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FirstTen - 找到你的前10个付费客户
 
-## Getting Started
+帮助技术创始人系统性地找到前10个付费客户的 AI 工具。
 
-First, run the development server:
+## 快速开始
+
+**前置要求：** Node.js 18+
 
 ```bash
+# 1. 解压后进入目录
+cd firstten
+
+# 2. 安装依赖
+npm install
+
+# 3. 配置 API Key
+cp .env.example .env.local
+# 编辑 .env.local，填入你的 OpenAI API Key
+
+# 4. 启动
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开浏览器访问 http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 功能
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **5问表单** — 输入产品信息，AI 自动生成获客策略
+- **客户画像** — AI 分析目标客户特征、痛点、出没场所
+- **10个渠道推荐** — 每个渠道含行动步骤、话术模板、成功案例
+- **进度追踪** — 标记完成、记录联系/回复人数、计算回复率
+- **20个话术模板** — 冷邮件、LinkedIn、Reddit、Twitter 分类模板，一键复制
 
-## Learn More
+## 隐私说明
 
-To learn more about Next.js, take a look at the following resources:
+- 所有用户数据（进度、结果）仅存储在浏览器 localStorage，不上传服务器
+- 表单内容仅用于调用 AI 生成策略，不会被存储或用于其他用途
+- API Key 仅存在于你本地的 `.env.local` 文件中
+- 项目设置了安全响应头（CSP、X-Frame-Options 等）
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 技术栈
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Next.js 16 + TypeScript + Tailwind CSS + OpenAI API
